@@ -24,6 +24,8 @@ public enum HUDContentType {
 
     case label(String?)
     case systemActivity
+    case customActivity
+    
     case customView(view: UIView)
 }
 
@@ -119,6 +121,9 @@ public final class HUD {
             return PKHUDTextView(text: text)
         case .systemActivity:
             return PKHUDSystemActivityIndicatorView()
+        case .customActivity:
+            return PKHUDCustomActivityIndicatorView()
+            
         case let .customView(view):
             return view
         }

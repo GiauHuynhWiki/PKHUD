@@ -33,12 +33,16 @@ class DemoViewController: UIViewController {
     }
 
     @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
-        HUD.flash(.success, delay: 2.0)
+//        HUD.flash(.success, delay: 2.0)
+        HUD.show(.systemActivity)
+        HUD.hide(afterDelay: 3.0)
     }
 
     @IBAction func showAnimatedErrorHUD(_ sender: AnyObject) {
-        HUD.show(.error)
-        HUD.hide(afterDelay: 2.0)
+//        HUD.show(.error)
+//        HUD.hide(afterDelay: 2.0)
+        HUD.show(.customActivity)
+        HUD.hide(afterDelay: 3.0)
     }
 
     @IBAction func showAnimatedProgressHUD(_ sender: AnyObject) {
