@@ -8,7 +8,7 @@
 import UIKit
 //import Gifu
 
-class PKHUDOSXSpinningView: UIView {
+public class PKHUDOSXSpinningView: UIView {
     let gifImageView: GIFImageView = {
         let gifImageView = GIFImageView()
         gifImageView.clipsToBounds = true
