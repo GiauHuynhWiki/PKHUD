@@ -89,6 +89,8 @@ public class Animator {
       imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif")
       if let imagePath = imagePath {
           print("bundle.url... \(imagePath)")
+      } else {
+          print("not bundle.url...")
       }
       
       // primary bundle
@@ -96,6 +98,8 @@ public class Animator {
       imagePath = primaryBundle.url(forResource: extensionRemoved, withExtension: "gif")
       if let imagePath = imagePath {
           print("primaryBundle.url... \(imagePath)")
+      } else {
+          print("not primaryBundle.url...")
       }
       
       // sub bundle
@@ -105,7 +109,11 @@ public class Animator {
           imagePath = subBundle.url(forResource: extensionRemoved, withExtension: "gif")
           if let imagePath = imagePath {
               print("subBundle.url... \(imagePath)")
+          } else {
+              print("not subBundle.url...")
           }
+      } else {
+          print("have not subBundle...")
       }
       
       guard let imagePath = imagePath else { return }
