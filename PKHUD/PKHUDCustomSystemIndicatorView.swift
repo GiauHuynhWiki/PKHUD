@@ -1,5 +1,5 @@
 //
-//  PKHUDCustomActivityIndicatorView.swift
+//  PKHUDCustomSystemIndicatorView.swift
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/12/15.
@@ -9,8 +9,8 @@
 
 import UIKit
 
-/// PKHUDCustomActivityIndicatorView provides the system UIActivityIndicatorView as an alternative.
-public final class PKHUDCustomActivityIndicatorView: UIView, PKHUDAnimating {
+/// PKHUDCustomSystemIndicatorView provides the system UIActivityIndicatorView as an alternative.
+public final class PKHUDCustomSystemIndicatorView: UIView, PKHUDAnimating {
 
     public init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 120, height: 120))

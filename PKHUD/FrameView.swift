@@ -13,7 +13,7 @@ import UIKit
 internal class FrameView: UIVisualEffectView {
 
     internal init() {
-        super.init(effect: UIBlurEffect(style: .extraLight))
+        super.init(effect: UIBlurEffect(style: .light))
         DispatchQueue.main.async {
             self.commonInit()
         }

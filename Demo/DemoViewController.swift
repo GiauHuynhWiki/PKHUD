@@ -25,11 +25,13 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func showHideKeyboard(_ sender: Any) {
-        if hiddenTextField.isEditing {
-            view.endEditing(true)
-        } else {
-            hiddenTextField.becomeFirstResponder()
-        }
+//        if hiddenTextField.isEditing {
+//            view.endEditing(true)
+//        } else {
+//            hiddenTextField.becomeFirstResponder()
+//        }
+        HUD.show(.osx)
+        HUD.hide(afterDelay: 3.0)
     }
 
     @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
@@ -41,7 +43,7 @@ class DemoViewController: UIViewController {
     @IBAction func showAnimatedErrorHUD(_ sender: AnyObject) {
 //        HUD.show(.error)
 //        HUD.hide(afterDelay: 2.0)
-        HUD.show(.customActivity)
+        HUD.show(.customSystem)
         HUD.hide(afterDelay: 3.0)
     }
 
