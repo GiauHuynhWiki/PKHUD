@@ -37,9 +37,15 @@ public final class PKHUDCustomSystemIndicatorView: UIView, PKHUDAnimating {
     }
 
     let activityIndicatorView: UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView(style: .large)
-        activity.color = UIColor.black
-        return activity
+        if #available(iOS 13, *) {
+            let activity = UIActivityIndicatorView(style: .large)
+            activity.color = UIColor.black
+            return activity
+        } else {
+            let activity = UIActivityIndicatorView(style: .whiteLarge)
+            activity.color = UIColor.black
+            return activity
+        }
     }()
 
     public func startAnimation() {
