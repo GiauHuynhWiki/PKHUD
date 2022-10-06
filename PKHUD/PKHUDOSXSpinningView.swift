@@ -17,11 +17,11 @@ public class PKHUDOSXSpinningView: UIView {
         return gifImageView
     }()
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    init() {
+    public init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 108, height: 108))
         
         gifImageView.frame = CGRect(x: 18, y: 18, width: 72, height: 72)
