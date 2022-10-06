@@ -13,7 +13,7 @@ public class PKHUDOSXSpinningView: UIView {
         let gifImageView = GIFImageView()
         gifImageView.clipsToBounds = true
         gifImageView.contentMode = .scaleAspectFill
-//        gifImageView.animate(withGIFNamed: "osx_spinning5")
+        gifImageView.animate(withGIFNamed: "osx_spinning5")
         return gifImageView
     }()
     
@@ -25,7 +25,6 @@ public class PKHUDOSXSpinningView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: 108, height: 108))
         
         gifImageView.frame = CGRect(x: 18, y: 18, width: 72, height: 72)
-        gifImageView.animate(withGIFNamed: "osx_spinning5")
         addSubview(gifImageView)
     }
 }

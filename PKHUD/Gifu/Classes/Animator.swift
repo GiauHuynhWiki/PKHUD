@@ -79,45 +79,8 @@ public class Animator {
   /// - parameter completionHandler: Completion callback function
   func prepareForAnimation(withGIFNamed imageName: String, inBundle bundle: Bundle = .main, size: CGSize, contentMode: UIView.ContentMode, loopCount: Int = 0, completionHandler: (() -> Void)? = nil) {
       guard let extensionRemoved = imageName.components(separatedBy: ".")[safe: 0],
-            let imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif"),
+            let imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif") ?? Bundle(for: PKHUDAssets.self).url(forResource: extensionRemoved, withExtension: "gif"),
             let data = try? Data(contentsOf: imagePath) else { return }
-      
-//      guard let extensionRemoved = imageName.components(separatedBy: ".")[safe: 0] else { return }
-//      var imagePath: URL?
-//
-//      // main bundle
-//      imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif")
-//      if let imagePath = imagePath {
-//          print("bundle.url... \(imagePath)")
-//      } else {
-//          print("not bundle.url...")
-//      }
-//
-//      // primary bundle
-//      let primaryBundle = Bundle(for: PKHUDAssets.self)
-//      imagePath = primaryBundle.url(forResource: extensionRemoved, withExtension: "gif")
-//      if let imagePath = imagePath {
-//          print("primaryBundle.url... \(imagePath)")
-//      } else {
-//          print("not primaryBundle.url...")
-//      }
-//
-//      // sub bundle
-////      let subBundle = Bundle(url: Bundle(for: PKHUDAssets.self).url(forResource: "PKHUDResources", withExtension: "bundle") ?? )
-//      if let subBundleURL = Bundle(for: PKHUDAssets.self).url(forResource: "PKHUDResources", withExtension: "bundle"),
-//         let subBundle = Bundle(url: subBundleURL) {
-//          imagePath = subBundle.url(forResource: extensionRemoved, withExtension: "gif")
-//          if let imagePath = imagePath {
-//              print("subBundle.url... \(imagePath)")
-//          } else {
-//              print("not subBundle.url...")
-//          }
-//      } else {
-//          print("have not subBundle...")
-//      }
-//
-//      guard let imagePath = imagePath else { return }
-//      guard let data = try? Data(contentsOf: imagePath) else { return }
 
     prepareForAnimation(withGIFData: data,
                         size: size,
