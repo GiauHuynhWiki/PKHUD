@@ -79,8 +79,8 @@ public class Animator {
   /// - parameter completionHandler: Completion callback function
   func prepareForAnimation(withGIFNamed imageName: String, inBundle bundle: Bundle = .main, size: CGSize, contentMode: UIView.ContentMode, loopCount: Int = 0, completionHandler: (() -> Void)? = nil) {
     guard let extensionRemoved = imageName.components(separatedBy: ".")[safe: 0],
-//          let imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif"),
-          let imagePath = Bundle(for: PKHUDAssets.self).url(forResource: extensionRemoved, withExtension: "gif"),
+          let imagePath = bundle.url(forResource: extensionRemoved, withExtension: "gif"),
+//          let imagePath = Bundle(for: PKHUDAssets.self).url(forResource: extensionRemoved, withExtension: "gif"),
       let data = try? Data(contentsOf: imagePath) else { return }
 
     prepareForAnimation(withGIFData: data,
